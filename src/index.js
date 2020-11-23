@@ -1,25 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { store } from './redux/store';
-import { createMuiTheme, ThemeProvider } from '@material-ui/core';
-
-
-const theme = {
-  ...createMuiTheme(),
-  pallette: {...createMuiTheme().pallette, type: 'dark'}
-};
+import { BrowserRouter } from 'react-router-dom';
+import Theme from './components/Theme';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <Provider store={store}>
-        <App />
-      </Provider>
-    </ThemeProvider>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Theme>
+          <App />
+        </Theme>
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
