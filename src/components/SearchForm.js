@@ -23,7 +23,7 @@ export default function SearchForm() {
 
   return (
     <Grid container direction="row" justify="center" alignItems="center">
-        <Box p={2} mb={2} width="80%" maxWidth={400}>
+        <Box p={2} mb={2} width="100%" maxWidth={500}>
           <Paper elevation={24} component="form" color="primary" onSubmit={handleSubmit} style={{ width: '100%' }}>
             <Box p={1}>
               <Grid container direction="row" alignItems="center" justify="center">
@@ -43,4 +43,4 @@ export default function SearchForm() {
   )
 }
 
-// justify="center"
+// height: 2em
