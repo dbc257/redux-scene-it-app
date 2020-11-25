@@ -15,16 +15,16 @@ const lightTheme = {
 }
 
 export default function Theme(props) {
-  const [ darkMode, setDarkMode ] = useState();
+  const [ lightMode, setLightMode ] = useState();
 
-  const theme = createMuiTheme(darkMode ? darkTheme : lightTheme);
+  const theme = createMuiTheme(lightMode ? lightTheme : darkTheme);
   const toggle = () => {
-    setDarkMode(!darkMode);
+    setLightMode(!lightMode);
   }
 
   return (
     <ThemeContext.Provider value={{
-      darkMode,
+      lightMode,
       toggle
     }}>
       <ThemeProvider theme={theme}>

@@ -22,7 +22,7 @@ function App() {
         color='primary'
         style={{ position: 'fixed', bottom: '20px', right: '20px', fontSize: '30px' }}
         onClick={handleToggle}
-      >{ themeContext.darkMode ? '🌞' : '🌜' }</Fab>
+      >{ themeContext.lightMode ? '🌜' : '🌞' }</Fab>
     </Container>
   );
 }
