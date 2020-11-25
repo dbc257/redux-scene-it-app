@@ -55,7 +55,6 @@ export default function Favorites() {
       <br/>
       <br/>
       <br/>
-      <BottomNavigation/>
     </>
   )
 }
