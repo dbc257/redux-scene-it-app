@@ -40,7 +40,7 @@ export default function Home() {
         </BottomNavigation>
       </Link> 
       <br/>
-      <Typography variant="h1" align="center">Scene It!</Typography>
+      <Typography variant="h1" align="center">My Favorite Movie!</Typography>
       <br/>
       <SearchForm />
       <br/>

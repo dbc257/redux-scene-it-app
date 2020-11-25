@@ -39,7 +39,7 @@ export default function Favorites() {
         </BottomNavigation>
       </Link>
       <br/>
-      <Typography variant="h1" align="center">Favorites</Typography>
+      <Typography variant="h1" align="center">My Favorites</Typography>
       <br/>
       <br/>
       <br/>
