@@ -1,7 +1,9 @@
-import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, makeStyles, Typography } from '@material-ui/core'
+import { Grid, Button, Card, CardActionArea, CardActions, CardContent, CardMedia, makeStyles, Typography } from '@material-ui/core'
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { addFavorite, deleteFavorite } from '../redux/actions';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 const useClasses = makeStyles({
   root: {
@@ -17,10 +19,13 @@ const useClasses = makeStyles({
     flexGrow: '1'
   },
   content: {
-    flexGrow: '1',
+    textAlign: 'center',
   },
   poster: {
-    flex: '0 0 400px'
+    flex: '0 0 500px',
+  },
+  button: {
+    alignSelf: 'center'
   }
 })
 
@@ -41,21 +46,23 @@ export default function MovieCard(props) {
   }
 
   return (
+  <Grid item xs={12} sm={6} md={4} lg={3} >
     <Card className={classes.root}>
       <CardActionArea className={classes.card}>
         <CardMedia image={ Poster }  className={classes.poster} />
-        <CardContent  className={classes.content}>
+        <CardContent  className={classes.content} >
           <Typography variant="h5">{ Title }</Typography>
           <Typography color="textSecondary">{ Year }</Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
+      <CardActions className={classes.button} >
         { foundMovie ? (
-          <Button variant="contained" onClick={handleRemoveMovie}>Remove Movie</Button>
+          <Button variant="contained" onClick={handleRemoveMovie}><DeleteIcon /></Button>
         ): (
-          <Button color="secondary" variant="contained" onClick={handleAddMovie}>Add Movie</Button>
+        <Button color="secondary" variant="contained" onClick={handleAddMovie} ><FavoriteIcon /></Button>
         ) }
       </CardActions>
     </Card>
+  </Grid>
   )
 }
