@@ -18,11 +18,18 @@ function App() {
         <Route path="/" exact component={Home} />
         <Route path="/favorites" component={Favorites} />
       </Switch>
+      { themeContext.lightMode ? (      
       <Fab
         color='primary'
-        style={{ position: 'fixed', bottom: '20px', right: '20px', fontSize: '30px' }}
+        style={{ position: 'fixed', bottom: '20px', left: '20px', fontSize: '30px' }}
         onClick={handleToggle}
-      >{ themeContext.lightMode ? '🌜' : '🌞' }</Fab>
+      >🌜</Fab>
+      ) : (      
+      <Fab
+        color='primary'
+        style={{ position: 'fixed', bottom: '20px', left: '20px', fontSize: '30px' }}
+        onClick={handleToggle}
+      >🌞</Fab>) }
     </Container>
   );
 }

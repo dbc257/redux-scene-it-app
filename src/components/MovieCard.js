@@ -2,8 +2,14 @@ import { Link, Grid, Button, Card, CardActionArea, CardActions, CardContent, Car
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { addFavorite, deleteFavorite } from '../redux/actions';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import DeleteIcon from '@material-ui/icons/Delete';
+// import FavoriteIcon from '@material-ui/icons/Favorite';
+// import DeleteIcon from '@material-ui/icons/Delete';
+// import FavoriteBorderTwoToneIcon from '@material-ui/icons/FavoriteBorderTwoTone';
+// import FavoriteTwoToneIcon from '@material-ui/icons/FavoriteTwoTone';
+import ThemeContext from '../context/ThemeContext';
+import { useContext } from 'react';
+import MovieCardLightTheme from './components.MovieCard/MovieCardLightTheme'
+import MovieCardDarkTheme from './components.MovieCard/MovieCardDarkTheme'
 
 const useClasses = makeStyles({
   root: {
@@ -25,7 +31,7 @@ const useClasses = makeStyles({
   poster: {
     flex: '0 0 500px',
   },
-  button: {
+  favbutton: {
     alignSelf: 'center'
   }
 })
@@ -46,41 +52,25 @@ export default function MovieCard(props) {
     dispatch(deleteFavorite(props.movie.imdbID))
   }
 
+  const [value, setValue] = React.useState(0);
+  const themeContext = useContext(ThemeContext);
+
   return (
+  
   <Grid item xs={12} sm={6} md={4} lg={4}>
-      { foundMovie ? (
-      <Link onClick={handleRemoveMovie} className={classes.root}>
-        <Card className={classes.root}>
-          <CardActionArea className={classes.card}>
-            <CardMedia image={ Poster }  className={classes.poster} />
-            <CardContent  className={classes.content} >
-              <Typography variant="h5">{ Title }</Typography>
-              <Typography color="textSecondary">{ Year }</Typography>
-            </CardContent>
-            <br/>
-            <CardActions className={classes.button} >
-              <Button variant="contained" className={classes.button}><DeleteIcon /></Button>
-            </CardActions>
-          </CardActionArea>
-        </Card>
-      </Link>
-      ) : (
-      <Link onClick={handleAddMovie} className={classes.root}>
-        <Card className={classes.root}>
-          <CardActionArea className={classes.card}>
-            <CardMedia image={ Poster }  className={classes.poster} />
-            <CardContent  className={classes.content} >
-              <Typography variant="h5">{ Title }</Typography>
-              <Typography color="textSecondary">{ Year }</Typography>
-            </CardContent>
-            <br/>
-            <CardActions className={classes.button} >
-              <Button color="secondary" variant="contained" className={classes.button}><FavoriteIcon /></Button>
-            </CardActions>
-          </CardActionArea>
-        </Card> 
-      </Link>
-      ) }
+  { themeContext.lightMode && foundMovie ? (
+        movies.map(movie => {
+          return (
+          <MovieCardLightTheme movie={movie} key={movie.imdbID} />
+          )
+        }) 
+    ) : (
+       movies.map(movie => {
+        return (
+        <MovieCardDarkTheme movie={movie} key={movie.imdbID} />
+        )
+      }) 
+    )}  
   </Grid>
   )
 }
