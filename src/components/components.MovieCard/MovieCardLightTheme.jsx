@@ -21,7 +21,8 @@ const useClasses = makeStyles({
     flexDirection: 'column',
     alignItems: 'stretch',
     flexGrow: '1',
-    backgroundColor: 'silver'    
+    // backgroundColor: 'silver'    
+    // backgroundColor: 'rgba(255, 255, 255, 0.7)'
   },
   content: {
     textAlign: 'center',
