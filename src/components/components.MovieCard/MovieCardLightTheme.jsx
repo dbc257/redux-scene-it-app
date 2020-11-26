@@ -68,12 +68,12 @@ export default function MovieCardLightTheme(props) {
             </CardContent>
             <br/>
             <CardActions className={classes.favbutton} >
-              <Button  
+              <Button 
               color="primary"
               variant="contained" 
               className={classes.favbutton}
               >
-                <FavoriteTwoToneIcon />
+                <FavoriteIcon color="secondary" />
               </Button>
             </CardActions>
           </CardActionArea>
@@ -90,12 +90,12 @@ export default function MovieCardLightTheme(props) {
             </CardContent>
             <br/>
             <CardActions className={classes.favbutton} >
-              <Button 
+              <Button  
               color="primary"
               variant="contained" 
               className={classes.favbutton}
               >
-                <FavoriteIcon color="secondary" />
+                <FavoriteTwoToneIcon />
               </Button>
             </CardActions>
           </CardActionArea>
