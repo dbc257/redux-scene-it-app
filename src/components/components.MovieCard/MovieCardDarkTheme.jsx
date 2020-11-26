@@ -66,13 +66,13 @@ export default function MovieCardDarkTheme(props) {
                     </CardContent>
                     <br/>
                     <CardActions className={classes.favbutton} >
-                    <Button 
-                    color="primary"
-                    variant="contained" 
-                    className={classes.favbutton}
-                    >
-                      <FavoriteIcon color="secondary" />
-                    </Button>
+                        <Button  
+                        color="primary"
+                        variant="contained" 
+                        className={classes.favbutton}
+                        >
+                          <FavoriteIcon color="secondary" />
+                        </Button>
                     </CardActions>
                 </CardActionArea>
             </Card>
@@ -88,13 +88,13 @@ export default function MovieCardDarkTheme(props) {
                 </CardContent>
                 <br/>
                 <CardActions className={classes.favbutton} >
-                <Button  
-                color="primary"
-                variant="contained" 
-                className={classes.favbutton}
-                >
-                  <FavoriteTwoToneIcon />
-                </Button>
+                    <Button 
+                    color="primary"
+                    variant="contained" 
+                    className={classes.favbutton}
+                    >
+                      <FavoriteTwoToneIcon />
+                    </Button>
                 </CardActions>
             </CardActionArea>
             </Card> 

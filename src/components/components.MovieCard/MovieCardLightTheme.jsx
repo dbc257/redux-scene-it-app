@@ -68,7 +68,7 @@ export default function MovieCardLightTheme(props) {
             </CardContent>
             <br/>
             <CardActions className={classes.favbutton} >
-              <Button 
+              <Button  
               color="primary"
               variant="contained" 
               className={classes.favbutton}
@@ -90,7 +90,7 @@ export default function MovieCardLightTheme(props) {
             </CardContent>
             <br/>
             <CardActions className={classes.favbutton} >
-              <Button  
+              <Button 
               color="primary"
               variant="contained" 
               className={classes.favbutton}
